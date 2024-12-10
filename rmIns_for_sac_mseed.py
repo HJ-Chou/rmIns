@@ -118,7 +118,7 @@ if __name__ == "__main__":
     # input param check
     try:
         if len(sys.argv) != 4:
-            print("Usage: python script.py [path to SAC or MSEED] [path to StationXML file] [output unit]\n Note: output unit must be one of ACC VEL DISP")
+            print("Usage: python script.py <path to SAC or MSEED> <path to StationXML file> <output unit>\nNote: output unit must be one of ACC VEL DISP")
             sys.exit(1)
 
         # input param check

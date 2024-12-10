@@ -1,0 +1,7 @@
+split_xml_station.py 程式使用說明
+
+使用: python split_xml_station.py <xml file>
+
+<file>表示file為必選參數
+
+需要輸入

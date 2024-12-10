@@ -1,0 +1,9 @@
+# The config file of rmIns_for_sac_mseed_with_yml.py
+# Different OS need to notice the path format
+# If format wrong it will use default setting
+RmIns_config:
+        input_data: './SAC/2024.055.04.36.08.0000.TW.ALS.10.EHZ.D.SAC'  # path to data ./SAC/2024.055.04.36.08.0000.TW.ALS.10.EHZ.D.SAC
+        xml: './xml/ALS.xml'  # path to xml
+        output_units: 'VEL'  # output data unit, One of: 'ACC', 'VEL', 'DISP' (acceleration, velocity, displacement)
+        output_format: 'MSEED'  # output file format, One of: 'MSEED', 'SAC', 'DEFAULT'
+        output_folder: './'  # the folder to store output file
