@@ -32,7 +32,7 @@ example: python rmIns_for_sac_mseed_with_yaml.py
 RmIns_config:
         input_data: './SAC/2024.055.04.36.08.0000.TW.ALS.10.EHZ.D.SAC'  # 地震波形檔的路徑
         xml: './xml/ALS.xml'  # 儀器響應檔的路徑
-        output_units: 'VEL'  # 去除儀器響應後的輸出單位，必須是[ACC, VEL, DISP]其中一個，
-        output_format: 'MSEED'  # output file format, One of: 'MSEED', 'SAC', 'DEFAULT'
+        output_units: 'VEL'  # 去除儀器響應後的輸出單位，必須是 [ACC, VEL, DISP] 其中一個，分別表示加速度、速度與位移，長度單位為公尺
+        output_format: 'MSEED'  # 輸出檔案的格式，必須是 [MSEED SAC DEFAULT] 中的其中一個，
         output_folder: './'  # the folder to store output file
 
