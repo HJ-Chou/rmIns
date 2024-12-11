@@ -116,7 +116,7 @@ if __name__ == "__main__":
     # input param check
     try:
         pwd = os.getcwd()
-        yaml_path = os.path.join(pwd, 'RmIns_config.yaml')
+        yaml_path = os.path.join(pwd, 'rmIns_config.yaml')
         if not os.path.exists(yaml_path):
             raise FileNotFoundError(f"Error: can't found yaml file: '{yaml_path}', please check the path to yaml.")
 
