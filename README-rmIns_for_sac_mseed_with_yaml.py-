@@ -17,11 +17,11 @@ ver1.0
 去除儀地震波形的儀器響應並輸出去除儀器響應的地震波形檔案
 ----------------------------------------------------------------------------------------------------
 使用方法:
-python rmIns_for_sac_mseed.py <具地震資料格式的檔案路徑> <儀器響應檔的路徑> <輸出資料的物理量>
-example: python rmIns_for_sac_mseed.py evt.mseed station.xml VEL
+python rmIns_for_sac_mseed_with_yaml.py
+example: python rmIns_for_sac_mseed_with_yaml.py
 ----------------------------------------------------------------------------------------------------
 備註:
-1. <>內表示必選參數
+1. 本程式不需要
 2. 輸出資料的物理量只能是[ACC VEL DISP]，分別表示加速度、速度與位移，長度單位為公尺
 3. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
 4. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 README-split_xml_station.py- 說明文件
