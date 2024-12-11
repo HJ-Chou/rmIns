@@ -1,7 +1,7 @@
-split_xml_station.py 程式使用說明
+split_xml_station.py 與 
 
-使用: python split_xml_station.py <xml file>
 
-<file>表示file為必選參數
+(1) split_xml_station.py: 將儀器響應檔插拆分成個別測站的儀器響應檔
 
-需要輸入
+使用方法: python split_xml_station.py
+注意: split_xml_station.py 與 CWASN.stationXML 需放在同一資料夾下; 只需要運行一次就可得到個別測站的儀器響應檔
