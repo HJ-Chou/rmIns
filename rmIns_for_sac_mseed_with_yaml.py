@@ -40,12 +40,12 @@ def yaml_read(yaml_path):
     return input_data_path, xml_path, output_units, output_format, output_folder
 
 
-def write_output_file(tr, station, channel, network, location, input_format, output_format, output_folder):
+def write_output_file(tr, station, network, location, channel, input_format, output_format, output_folder):
     if output_format == 'SAC':
-        tr.write(os.path.join(output_folder, f"{station}.{channel}.{network}.{location}_rmIns.sac"), format='SAC')
+        tr.write(os.path.join(output_folder, f"{station}.{network}.{location}.{channel}_rmIns_{output_units}.sac"), format='SAC')
     else:
         if input_format=='SAC' and output_format=='DEFAULT':
-            tr.write(os.path.join(output_folder, f"{station}.{channel}.{network}.{location}_rmIns.sac"), format='SAC')
+            tr.write(os.path.join(output_folder, f"{station}.{network}.{location}.{channel}_rmIns_{output_units}.sac"), format='SAC')
         else:
             # Determine appropriate encoding based on dtype
             if tr.data.dtype == np.int16:
@@ -57,7 +57,7 @@ def write_output_file(tr, station, channel, network, location, input_format, out
                 output_encoding = "FLOAT32"
             elif tr.data.dtype == np.float64:
             # FLOAT64 is not supported in MiniSEED; must downcast
-                print(f"Warning: Converting FLOAT64 to FLOAT32 for trace {tr.id}")
+                #print(f"Warning: Converting FLOAT64 to FLOAT32 for trace {tr.id}")
                 tr.data = tr.data.astype(np.float32)
                 output_encoding = "FLOAT32"
             else:
@@ -65,7 +65,7 @@ def write_output_file(tr, station, channel, network, location, input_format, out
 
             # Set the encoding for writing
             try:
-                tr.write(os.path.join(output_folder, f"{station}.{channel}.{network}.{location}_rmIns.mseed"), format='MSEED', encoding=output_encoding)
+                tr.write(os.path.join(output_folder, f"{station}.{network}.{location}.{channel}_rmIns_{output_units}.mseed"), format='MSEED', encoding=output_encoding)
             except Exception as e:
                 print(f"Error: {e}")
                 sys.exit(1)
@@ -91,15 +91,16 @@ def remove_instrument_response(input_data_path, xml_path, output_units, output_f
     # Process each trace in the stream
     for tr in st:
         station = tr.stats.station
-        channel = tr.stats.channel
         network = tr.stats.network
         location = tr.stats.location
+        channel = tr.stats.channel
+        
         input_format = tr.stats._format
         print(network, station, location, channel)
         # Select the relevant part of the inventory
         print(f"Selecting inventory for station: {station}, channel: {channel}")
         try:
-            selected_inventory = input_inventory.select(network=network, station=station, location=location, channel=channel)
+            selected_inventory = input_inventory.select(station=station, network=network, location=location, channel=channel)
         except Exception as e:
             print(f"Error selecting inventory for trace {tr.id}: {e}. Skipping.")
             continue
@@ -108,7 +109,7 @@ def remove_instrument_response(input_data_path, xml_path, output_units, output_f
         try:
             print(f"Removing instrument response for trace {tr.id}")
             tr.remove_response(inventory=input_inventory, output=output_units, pre_filt=None)
-            write_output_file(tr, station, channel, network, location, input_format, output_format, output_folder)
+            write_output_file(tr, station, network, location, channel, input_format, output_format, output_folder)
         except Exception as e:
             print(f"Error removing instrument response for trace {tr.id}: {e}. Skipping.")
             continue
