@@ -8,7 +8,7 @@
 ### 所需模組
 - [ObsPy](https://docs.obspy.org/)
 - [PyYAML](https://pypi.org/project/PyYAML/)
-- Matplotlib()
+- [Matplotlib] (https://github.com/matplotlib/matplotlib)
 
 ### Author:
 HJC  
