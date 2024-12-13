@@ -66,10 +66,10 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
         channel = tr.stats.channel
 
         # Select the relevant part of the inventory
-        print(f"Selecting inventory for station: {station}, channel: {channel}")
+        print(f"Selecting inventory for station: {station}, network: {network}, location: {location}, channel: {channel}")
         try:
             selected_inventory = full_inventory.select(
-                network=network, station=station, location=location, channel=channel
+                station=station, network=network, location=location, channel=channel
             )
         except Exception as e:
             print(f"Error selecting inventory for trace {tr.id}: {e}. Skipping.")
@@ -103,12 +103,12 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
                 tr.stats.mseed.encoding = encoding
                 print(f"Encoding set for trace {tr.id}: {encoding}")
 
-                tr.write(os.path.join('./', f"{station}.{channel}_rmIns_{output_units}.mseed"),
+                tr.write(os.path.join('./', f"{station}.{network}.{location}.{channel}_rmIns_{output_units}.mseed"),
                          format=input_format)
             else:
-                tr.write(os.path.join(output_folder, f"{station}.{channel}_rmIns_{output_units}.sac"),
+                tr.write(os.path.join(output_folder, f"{station}.{network}.{location}.{channel}_rmIns_{output_units}.sac"),
                          format=input_format)
-            print(f"Processed file saved: {station}_{channel}_rmIns.{input_format.lower()}")
+            print(f"Processed file saved: {station}.{network}.{location}.{channel}_rmIns_{output_units}.{input_format.lower()}")
 
         except Exception as e:
             print(f"Error removing instrument response for trace {tr.id}: {e}. Skipping.")
