@@ -1,14 +1,14 @@
 # README.md
 
-## 以下此
-## rmIns_for_sac_mseed_with_yaml.py
+## 以下列出本儲存庫內的幾個注意事項, 更為詳細的內容各個程式有其使用說明文件
 
-### Required Environment:
+### 需求環境
 - Python 3.6+
 
-### Required Modules:
+### 所需模組
 - [ObsPy](https://docs.obspy.org/)
 - [PyYAML](https://pypi.org/project/PyYAML/)
+- Matplotlib()
 
 ### Author:
 HJC  
