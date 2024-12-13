@@ -60,8 +60,8 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
 
     # Process each trace in the stream
     for tr in st:
-        network = tr.stats.network
         station = tr.stats.station
+        network = tr.stats.network
         location = tr.stats.location
         channel = tr.stats.channel
 
