@@ -16,5 +16,5 @@
 
 ### Citation
 #### 如果GDMS對您發表成果有所助益，請考慮引用 GDMS 及 TECDC，祝您順心
-GDMS https://doi.org/10.7914/SN/T5
-TECDC doi: 10.30067/TECNL.202206_1(1).0003
+- [GDMS](https://doi.org/10.7914/SN/T5)
+- [TECDC](doi: 10.30067/TECNL.202206_1(1).0003)
