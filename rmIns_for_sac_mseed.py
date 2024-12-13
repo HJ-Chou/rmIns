@@ -1,8 +1,9 @@
-# This program is provided by the IESDMC team.
-# usage: python rmIns_for_sac_mseed.py <path to SAC or MiniSEED file> <path to StationXML file>
-# author: hjc
-# 2024-11-22 ver. 1.0
-
+# ----------------------------------------------------------------------------------------------------
+# HJC
+# IESDMC
+# 2024-12-11
+# ver1.0
+# ----------------------------------------------------------------------------------------------------
 import os
 import sys
 import numpy as np
