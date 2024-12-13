@@ -16,10 +16,11 @@ ver1.0
 將儀器響應檔插拆分成個別測站的儀器響應檔並儲存在新建立的 xml 資料夾內
 ----------------------------------------------------------------------------------------------------
 使用方法:
-使用方法: python split_xml_station.py stationXML
+使用方法: python split_xml_station.py <stationXML>
 example: python split_xml_station.py stationXML
 ----------------------------------------------------------------------------------------------------
 備註:
-1. stationXML 與 split_xml_station.py 程式需放在同一路徑下
-2. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
-3. 由於拆分成的個別測站儀器響應檔會被放在新建立的 xml 資料夾內，請注意資料夾名稱是否重複，使用者無需新建資料夾，程式會自行新增 xml 資料夾
+1. 
+2. stationXML 與 split_xml_station.py 程式需放在同一路徑下
+3. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
+4. 由於拆分成的個別測站儀器響應檔會被放在新建立的 xml 資料夾內，請注意資料夾名稱是否重複，使用者無需新建資料夾，程式會自行新增 xml 資料夾
