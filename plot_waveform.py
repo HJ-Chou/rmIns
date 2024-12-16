@@ -105,7 +105,7 @@ def plot_mseeds(DataFile, sync_time=False):
 def main():
     # Argument parser to handle options
     parser = argparse.ArgumentParser(description="Plot sac or mseed files with optional synchronized time axis.")
-    parser.add_argument("-s", "--sync", action="store_true", help="Synchronize time axis for all plots")
+    parser.add_argument("-s", "--synch", action="store_true", help="Synchronize time axis for all plots")
     parser.add_argument("DataFile", nargs="+", help="List of seismic data in sac or mseed format to plot (max 6)")
 
     args = parser.parse_args()
