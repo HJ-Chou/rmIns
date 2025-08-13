@@ -20,6 +20,7 @@ example: python rmIns_for_sac_mseed.py evt.mseed station.xml VEL
 備註:
 1. <>內表示必選參數
 2. 輸出資料的物理量只能是 [ACC VEL DISP]，分別表示加速度、速度與位移，長度單位為公尺
-3. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
-4. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 split_xml_station.py_README.md 說明文件
-5. 去除儀器響應後的資料型別會變為 float64(雙精度浮點數), 為節省儲存空間本程式會以 float32(單精度浮點數) 輸出
+3. 程式內的 pre_filt 設定預設值為 [0.01,0.025,30,40] 此濾波器會保留頻率在 0.025-30Hz 之間的訊號，而 <0.01Hz 及 >40Hz 的訊號將被抹去，0.01-0.025Hz 和 30-40Hz 的高低通採餘弦尖滅(cosine tapering	)
+4. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
+5. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 split_xml_station.py_README.md 說明文件
+6. 去除儀器響應後的資料型別會變為 float64(雙精度浮點數), 為節省儲存空間本程式會以 float32(單精度浮點數) 輸出

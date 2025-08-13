@@ -21,8 +21,10 @@ example: python rmIns_for_sac_mseed_with_yaml.py
 備註:
 1. 本程式不需要輸入任何參數，僅需要修改 rmIns_config.yaml 設定檔即可
 2. rmIns_config.yaml 與 rmIns_for_sac_mseed_with_yaml.py 程式需放在同一路徑下
-3. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
-4. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 split_xml_station.py_README.md 說明文件
+3. 程式內的 pre_filt 設定預設值為 [0.01,0.025,30,40] 此濾波器會保留頻率在 0.025-30Hz 之間的訊號，而 <0.01Hz 及 >40Hz 的訊號將被抹去，0.01-0.025Hz 和 30-40Hz 的高低通採餘弦尖滅(cosine tapering )
+
+4. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
+5. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 split_xml_station.py_README.md 說明文件
 
 以下為 yaml 檔內容範例與中文註解
 # 此檔案為 rmIns_for_sac_mseed_with_yaml.py 的設定檔
