@@ -13,11 +13,11 @@ from datetime import datetime
 
 
 
-def plot_mseeds(DataFile, sync_time=False):
+def plot_mseeds(DataFile, synch_time=False):
     """
     Plots mseed files dynamically based on their count.
     Each subplot represents one mseed file, and multiple waveforms in the same file are plotted together.
-    If sync_time is True, all subplots share the same time axis.
+    If synch_time is True, all subplots share the same time axis.
     """
     num_files = len(DataFile)
     if num_files == 0:
@@ -32,9 +32,9 @@ def plot_mseeds(DataFile, sync_time=False):
     fig, axes = plt.subplots(num_files, 1, figsize=(12, num_files * 2), squeeze=False)
     axes = axes.flatten()
 
-    # Determine global start and end times if sync_time is enabled
+    # Determine global start and end times if synch_time is enabled
     global_start, global_end = None, None
-    if sync_time:
+    if synch_time:
         global_start = min(tr.stats.starttime for mseed in DataFile for tr in read(mseed))
         global_end = max(tr.stats.endtime for mseed in DataFile for tr in read(mseed))
 
@@ -52,8 +52,8 @@ def plot_mseeds(DataFile, sync_time=False):
                 print(f"Error: File {mseed_file} exceeds 7-day length limit.")
                 sys.exit(1)
 
-            start_time = global_start if sync_time else local_start
-            end_time = global_end if sync_time else local_end
+            start_time = global_start if synch_time else local_start
+            end_time = global_end if synch_time else local_end
 
             for tr in st:
                 # Generate time data for plotting
@@ -114,7 +114,7 @@ def main():
         print("Error: Provide between 1 and 6 mseed files.")
         sys.exit(1)
 
-    plot_mseeds(args.DataFile, sync_time=args.sync)
+    plot_mseeds(args.DataFile, synch_time=args.synch)
 
 
 if __name__ == "__main__":

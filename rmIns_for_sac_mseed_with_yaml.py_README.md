@@ -10,8 +10,6 @@ yaml https://pypi.org/project/PyYAML/
 ----------------------------------------------------------------------------------------------------
 HJC
 IESDMC
-2024-12-11
-ver1.0
 ----------------------------------------------------------------------------------------------------
 功能:
 去除儀地震波形的儀器響應並輸出去除儀器響應的地震波形檔案
@@ -24,7 +22,7 @@ example: python rmIns_for_sac_mseed_with_yaml.py
 1. 本程式不需要輸入任何參數，僅需要修改 rmIns_config.yaml 設定檔即可
 2. rmIns_config.yaml 與 rmIns_for_sac_mseed_with_yaml.py 程式需放在同一路徑下
 3. 儀器響應檔限制使用 xml 格式 https://www.fdsn.org/xml/station/
-4. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 README-split_xml_station.py- 說明文件
+4. 可使用單獨測站之儀器響應檔以加快程式運行速度，取得儀器響應檔之方法可參見 split_xml_station.py_README.md 說明文件
 
 以下為 yaml 檔內容範例與中文註解
 # 此檔案為 rmIns_for_sac_mseed_with_yaml.py 的設定檔

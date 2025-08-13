@@ -1,8 +1,7 @@
 # ----------------------------------------------------------------------------------------------------
 # HJC
 # IESDMC
-# 2024-12-11
-# ver1.0
+# 2025-08-13
 # ----------------------------------------------------------------------------------------------------
 import os
 import sys
@@ -78,7 +77,7 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
         # Remove the instrument response
         try:
             print(f"Removing instrument response for trace {tr.id}")
-            tr.remove_response(inventory=selected_inventory, output=output_units, pre_filt=None)
+            tr.remove_response(inventory=selected_inventory, output=output_units, water_level=None, pre_filt=[0.01, 0.025, 30, 40])
             
             # Ensure data type compatibility for MiniSEED
             if input_format == "MSEED":

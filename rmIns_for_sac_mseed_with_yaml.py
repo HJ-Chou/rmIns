@@ -108,7 +108,7 @@ def remove_instrument_response(input_data_path, xml_path, output_units, output_f
         # Remove the instrument response
         try:
             print(f"Removing instrument response for trace {tr.id}")
-            tr.remove_response(inventory=input_inventory, output=output_units, pre_filt=None)
+            tr.remove_response(inventory=input_inventory, output=output_units, water_level=None, pre_filt=[0.01, 0.025, 30, 40])
             write_output_file(tr, station, network, location, channel, input_format, output_format, output_folder)
         except Exception as e:
             print(f"Error removing instrument response for trace {tr.id}: {e}. Skipping.")
