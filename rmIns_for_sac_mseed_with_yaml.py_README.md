@@ -9,6 +9,7 @@ yaml https://pypi.org/project/PyYAML/
 去除儀地震波形的儀器響應並輸出去除儀器響應的地震波形檔案
 #### 使用方法:
 python rmIns_for_sac_mseed_with_yaml.py
+example: python rmIns_for_sac_mseed_with_yaml.py
 #### 備註:
 1. 本程式不需要輸入任何參數，僅需要修改 rmIns_config.yaml 設定檔即可
 2. rmIns_config.yaml 與 rmIns_for_sac_mseed_with_yaml.py 程式需放在同一路徑下
