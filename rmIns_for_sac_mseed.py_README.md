@@ -7,6 +7,7 @@ obspy https://docs.obspy.org/
 去除儀地震波形的儀器響應並輸出與輸入格式相同的地震波形檔案
 #### 使用方法:
 python rmIns_for_sac_mseed.py <具地震資料格式的檔案路徑> <儀器響應檔的路徑> <輸出資料的物理量>
+
 example: python rmIns_for_sac_mseed.py evt.mseed station.xml VEL
 #### 備註:
 1. <>內表示必選參數
