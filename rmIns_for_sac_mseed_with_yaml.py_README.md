@@ -19,7 +19,7 @@ example: python rmIns_for_sac_mseed_with_yaml.py
 
 ## 以下為 yaml 檔內容範例與中文註解
 ####  此檔案為 rmIns_for_sac_mseed_with_yaml.py 的設定檔
-####  不同作業系統需要注意路徑的寫法(windows:'\', linux:'/')
+####  不同作業系統需要注意路徑的寫法(windows:\, linux:/)
 #### RmIns_config:
     input_data: './SAC/2024.055.04.36.08.0000.TW.ALS.10.EHZ.D.SAC'  # 地震波形檔的路徑
     xml: './xml/ALS.xml'  # 儀器響應檔的路徑
