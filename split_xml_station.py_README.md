@@ -7,6 +7,7 @@ obspy https://docs.obspy.org/
 將儀器響應檔插拆分成個別測站的儀器響應檔並儲存在新建立的 xml 資料夾內
 #### 使用方法:
 python split_xml_station.py <stationXML>
+
 example: python split_xml_station.py stationXML
 #### 備註:
 1. <>內表示必選參數
