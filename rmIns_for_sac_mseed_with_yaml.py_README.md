@@ -3,6 +3,7 @@
 python3.6+
 #### 必要模組:
 obspy https://docs.obspy.org/
+
 yaml https://pypi.org/project/PyYAML/
 #### 功能:
 去除儀地震波形的儀器響應並輸出去除儀器響應的地震波形檔案
