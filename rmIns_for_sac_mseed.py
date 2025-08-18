@@ -1,13 +1,19 @@
 # ----------------------------------------------------------------------------------------------------
-# HJC
-# IESDMC
-# 2025-08-13
+# author: hjc
+# IESDMC/TECDC
 # ----------------------------------------------------------------------------------------------------
 import os
 import sys
 import numpy as np
 from obspy import read, read_inventory
 
+
+# pre_filt params setting
+f1 = 0.01
+f2 = 0.025
+f3 = 30
+f4 = 40
+pre_filt = [f1, f2, f3, f4]
 
 def detect_format(filepath):
     """
@@ -77,7 +83,7 @@ def remove_instrument_response(input_data_path, xml_path, output_units):
         # Remove the instrument response
         try:
             print(f"Removing instrument response for trace {tr.id}")
-            tr.remove_response(inventory=selected_inventory, output=output_units, water_level=None, pre_filt=[0.01, 0.025, 30, 40])
+            tr.remove_response(inventory=selected_inventory, output=output_units, water_level=None, pre_filt=pre_filt)
             
             # Ensure data type compatibility for MiniSEED
             if input_format == "MSEED":

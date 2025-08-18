@@ -1,8 +1,6 @@
 # ----------------------------------------------------------------------------------------------------
-# HJC
-# IESDMC
-# 2024-12-11
-# ver1.0
+# author: hjc
+# IESDMC/TECDC
 # ----------------------------------------------------------------------------------------------------
 import sys
 import argparse
@@ -10,7 +8,6 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from obspy import read
 from datetime import datetime
-
 
 
 def plot_mseeds(DataFile, synch_time=False):
