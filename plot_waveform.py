@@ -90,7 +90,6 @@ def plot_mseeds(DataFile, synch_time=False):
             if i == num_files - 1:
                 ax.set_xlabel("Time (UTC)", fontsize=10)
 
-            plt.setp(ax.xaxis.get_majorticklabels())
         except Exception as e:
             print(f"Error reading {mseed_file}: {e}")
             sys.exit(1)
