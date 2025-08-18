@@ -11,8 +11,8 @@
 - [Matplotlib](https://github.com/matplotlib/matplotlib)
 
 #### 其他資訊
-程式作者: HJC  
-提供單位: IESDMC
+程式作者: hjc 
+提供單位: IESDMC/TECDC
 
 #### Citation
 ##### 如果本儲存庫對您發表成果有所助益，請考慮引用 GDMS 及 TECDC，祝您順心
